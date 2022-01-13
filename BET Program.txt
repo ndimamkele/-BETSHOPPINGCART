@@ -1,0 +1,55 @@
+/******************************************************************************
+
+                            Online Java Debugger.
+                Code, Run and Debug Java program online.
+Write your code in this editor and press "Debug" button to debug program.
+
+*******************************************************************************/
+abstract class Basket{
+   /* These two are abstract methods, the child class
+    * must implement these methods
+    */
+    public String Name = "Golfer";
+      public String Size = "l";
+      public int s,m,l; 
+   public abstract void GetTotalPrice();
+   //Regular method 
+   public void disp(int p1){
+        if (p1 == 10) {
+            s = 20;
+        }
+        else {
+            m = 40;
+            l = 60;
+        }
+   }
+}
+//Regular class extends abstract class
+class TShirt extends Basket{
+
+ 
+    
+   public void GetTotalPrice(){
+  
+    int Totalprice = m + l ;
+    System.out.println("your total price is : " + Totalprice);
+	
+   }
+  
+}
+class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+      Basket basket = new TShirt();
+     
+       
+	
+	
+	basket.disp(1);
+	basket.GetTotalPrice();
+    }
+}
